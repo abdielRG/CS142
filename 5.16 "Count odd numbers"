@@ -1,0 +1,46 @@
+/*
+Write a program that takes in four positive integers and outputs the number of odd numbers. 
+(Hint: use the modulo operator to determine if a number is odd)
+
+Ex: If the input is:
+    1 2 3 4
+the output is:
+    2
+
+Ex: If the input is:
+    19 19 19 19
+the output is:
+    4
+*/
+
+import java.util.Scanner;
+
+public class LabProgram 
+{
+    public static void main(String[] args) 
+    {
+        Scanner scnr = new Scanner(System.in);
+
+        int num1;
+        int num2;
+        int num3;
+        int num4;
+        int oddNums = 0;
+
+        num1 = scnr.nextInt();
+        num2 = scnr.nextInt();
+        num3 = scnr.nextInt();
+        num4 = scnr.nextInt();
+
+        if (num1 % 2 != 0)
+            ++oddNums;
+        if (num2 % 2 != 0)
+            ++oddNums;
+        if (num3 % 2 != 0)
+            ++oddNums;
+        if (num4 % 2 != 0)
+            ++oddNums;
+
+        System.out.println(oddNums);
+    }
+}
