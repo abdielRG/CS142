@@ -1,0 +1,40 @@
+/*
+Write a program that takes three integers as input: low, high, and x. The program then outputs the number of 
+multiples of x between low and high inclusive.
+
+Ex: If the input is:
+    1 10 2
+the output is:
+    5
+
+Hint: Use the % operator to determine if a number is a multiple of x. Use a for loop to test each number between 
+low and high.
+*/
+
+import java.util.Scanner;
+
+public class LabProgram 
+{
+    public static void main(String[] args) 
+    {
+        Scanner scnr = new Scanner(System.in);
+
+        int low;
+        int high;
+        int x;
+        int i;
+        int countMulti = 0;
+
+        low = scnr.nextInt();
+        high = scnr.nextInt();
+        x = scnr.nextInt();
+
+        for (i = low; i <= high; ++i) 
+        {
+            if (i % x == 0)
+                ++countMulti;
+        }
+
+        System.out.println(countMulti);
+    }
+}
