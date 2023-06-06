@@ -1,0 +1,81 @@
+/*
+Many documents use a specific format for a person's name. Write a program whose input is:
+    firstName middleName lastName
+
+and whose output is:
+    lastName, firstInitial.middleInitial.
+
+Ex: If the input is:
+    Pat Silly Doe
+the output is:
+    Doe, P.S.
+
+If the input has the form:
+    firstName lastName
+the output is:
+    lastName, firstInitial.
+
+Ex: If the input is:
+    Julia Clark
+the output is:
+    Clark, J.
+*/
+
+import java.util.Scanner; 
+
+public class LabProgram 
+{
+    public static void main(String[] args) 
+    {
+        Scanner scnr = new Scanner(System.in);
+        String fullName;
+        char firstInitial;
+        char middleInitial;
+        String lastName;
+        int firstWhitespace;
+        int secondWhitespace;
+
+        fullName = scnr.nextLine();
+        firstWhitespace = fullName.indexOf(" ");
+
+        // First, middle and last
+        if (firstWhitespace != fullName.lastIndexOf(" ")) 
+        {
+            secondWhitespace = fullName.lastIndexOf(" ");
+            firstInitial = fullName.charAt(0);
+            middleInitial = fullName.charAt(firstWhitespace + 1);
+            lastName = fullName.substring(secondWhitespace + 1);
+
+            System.out.println(lastName + ", " + firstInitial + "." + middleInitial + ".");
+        }
+        // First and last
+        else 
+        {
+            firstInitial = fullName.charAt(0);
+            lastName = fullName.substring(firstWhitespace + 1);
+
+            System.out.println(lastName + ", " + firstInitial + ".");
+        }
+    }
+}
+
+/*
+Pseudocode:
+
+Create Scanner object (scnr)
+Create four string objects (firstName, middleName, lastName and fullName)
+Get input and assign to fullName
+
+If fullName has two whitespaces (first and last name)
+   Assign first word to firstName
+   Assign second word to lastName
+   Output lastName, followed by comma and space
+   Output the first index of firstName, followed by a period and newline
+Else (first, middle and last name)
+   Assign first word to firstName
+   Assign second word to middleName
+   Assign third word to lastName
+   Output lastName, followed by comma and space
+   Output first index of firstName, followed by a period and space
+   Output first index of middleName, followed by a period and newline
+*/
