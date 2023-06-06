@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class LabProgram {
+	public static void main(String[] args) {
+		Scanner scnr = new Scanner(System.in);
+
+		double calories;
+		int age;
+		int weight;
+		int heartRate;
+		int timeWorked;
+
+		age = scnr.nextInt();
+		weight = scnr.nextInt();
+		heartRate = scnr.nextInt();
+		timeWorked = scnr.nextInt();
+
+		calories = ((age * 0.2757) + (weight * 0.03295) + (heartRate * 1.0781) - 75.4991) * timeWorked / 8.368;
+
+		System.out.print("Calories: ");
+		System.out.printf("%.2f", calories);
+		System.out.println(" calories");
+   }
+} 
