@@ -1,0 +1,40 @@
+/*
+Write a program to draw a right-justified triangle given the height as input. The first row has one asterisk (*) and increases by one for each row. Each asterisk is followed by a blank space and each row ends with a newline.
+
+Ex: If the input is:
+    3
+the output is:
+    * 
+  * *
+* * *
+
+*/
+
+import java.util.Scanner;
+
+public class LabProgram 
+{
+    public static void main(String[] args) 
+    {
+        Scanner scnr = new Scanner(System.in);
+
+        int height;
+        int row;
+        int col;
+
+        height = scnr.nextInt();
+
+        for (row = 1; row <= height; ++row) 
+        {
+            for (col = 1; col <= height; ++col) 
+            {
+                if (col <= (height - row))
+                    System.out.print("  ");
+                else
+                    System.out.print("* ");
+            }
+            
+            System.out.println();
+        }
+    }
+}
