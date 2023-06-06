@@ -1,0 +1,34 @@
+/*
+Write a program that repeatedly reads in integers until a negative integer is read. The program also keeps track of the largest integer that has been read so far and outputs the largest integer at the end.
+
+Ex: If the input is:
+    2 77 17 4 -1
+the output is:
+    77
+
+Assume a user will enter at least one non-negative integer.
+*/
+
+import java.util.Scanner;
+
+public class LabProgram 
+{
+    public static void main(String[] args) 
+    {
+        Scanner scnr = new Scanner(System.in);
+
+        int numIn = 0;
+        int bigNum = 0;
+
+        numIn = scnr.nextInt();
+
+        while (numIn > -1) 
+        {
+            if (numIn > bigNum)
+            bigNum = numIn;
+            numIn = scnr.nextInt();
+        }
+
+        System.out.println(bigNum);
+    }
+}
