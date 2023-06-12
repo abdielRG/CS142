@@ -15,7 +15,9 @@ public class LabProgram {
 		heartRate = scnr.nextInt();
 		timeWorked = scnr.nextInt();
 
-		calories = ((age * 0.2757) + (weight * 0.03295) + (heartRate * 1.0781) - 75.4991) * timeWorked / 8.368;
+		calories = ((age * 0.2757) + (weight * 0.03295) 
+			   + (heartRate * 1.0781) - 75.4991) 
+			   * timeWorked / 8.368;
 
 		System.out.print("Calories: ");
 		System.out.printf("%.2f", calories);
