@@ -1,0 +1,64 @@
+/*
+Define a method named swapValues that takes an array of four integers as a parameter, 
+swaps array elements at indices 0 and 1, and swaps array elements at indices 2 and 3. 
+Then write a main program that reads four integers from input and stores the integers 
+in an array in positions 0 to 3. The main program should call function swapValues() 
+to swap array's values and print the swapped values on a single line separated with spaces.
+
+Ex: If the input is:
+    3 8 2 4
+function swapValues() returns and the main program outputs:
+    8 3 4 2
+
+The program must define and call a method:
+    public static void swapValues(int[] values)
+*/
+
+import java.util.Scanner;
+
+public class LabProgram 
+{
+    public static void swapValues(int[] values)
+    {
+        int temp;
+        int length = values.length;
+
+        for (int i = 0; i < length; i = i + 2) 
+        {
+            temp = values[i];
+            values[i] = values[i + 1];
+            values[i + 1] = temp;
+        }
+    }
+}
+
+
+public static void main(String[] args) 
+{
+    Scanner scnr = new Scanner(System.in);
+    final int ARRAY_LENGTH = 4;
+    int[] array = new int[ARRAY_LENGTH];
+
+    //Fill array
+    for (int i = 0; i < ARRAY_LENGTH; ++i) 
+    {
+        array[i] = scnr.nextInt();
+    }
+
+    //Call swapValues to flip array
+    swapValues(array);
+
+    //Output newly swapped array
+    for (int i = 0; i < ARRAY_LENGTH; ++i) 
+    {
+        if (i == ARRAY_LENGTH -1) 
+        {
+            System.out.print(array[i]);
+        }
+        else 
+        {
+            System.out.print(array[i] + " ");
+        }
+    }
+    System.out.println();
+}
