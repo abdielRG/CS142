@@ -30,35 +30,35 @@ public class LabProgram
             values[i + 1] = temp;
         }
     }
-}
 
 
-public static void main(String[] args) 
-{
-    Scanner scnr = new Scanner(System.in);
-    final int ARRAY_LENGTH = 4;
-    int[] array = new int[ARRAY_LENGTH];
-
-    //Fill array
-    for (int i = 0; i < ARRAY_LENGTH; ++i) 
+    public static void main(String[] args) 
     {
-        array[i] = scnr.nextInt();
-    }
+        Scanner scnr = new Scanner(System.in);
+        final int ARRAY_LENGTH = 4;
+        int[] array = new int[ARRAY_LENGTH];
 
-    //Call swapValues to flip array
-    swapValues(array);
+        //Fill array
+        for (int i = 0; i < ARRAY_LENGTH; ++i) 
+        {
+            array[i] = scnr.nextInt();
+        }
 
-    //Output newly swapped array
-    for (int i = 0; i < ARRAY_LENGTH; ++i) 
-    {
-        if (i == ARRAY_LENGTH -1) 
+        //Call swapValues to flip array
+        swapValues(array);
+
+        //Output newly swapped array
+        for (int i = 0; i < ARRAY_LENGTH; ++i) 
         {
-            System.out.print(array[i]);
+            if (i == ARRAY_LENGTH -1) 
+            {
+                System.out.print(array[i]);
+            }
+            else 
+            {
+                System.out.print(array[i] + " ");
+            }
         }
-        else 
-        {
-            System.out.print(array[i] + " ");
-        }
+        System.out.println();
     }
-    System.out.println();
 }
